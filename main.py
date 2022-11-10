@@ -31,6 +31,7 @@ def count_down(count):
 
 
 def start_timer():
+    button_start['state'] = DISABLED
     global reps
     reps += 1
     work_sec = WORK_MIN * 60
@@ -49,6 +50,7 @@ def start_timer():
 
 
 def reset_timer():
+    button_start['state'] = NORMAL
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
     title_label.config(text="Timer")
